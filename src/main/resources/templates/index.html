@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>导航</title>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div style="text-align:center;">
+                <img src="img/logo.png" style="width:400px;">
+            </div>
+            <div>
+                <p class="text-left"></p>
+                <p class="text-left"><h3>物联网--配置中心</h3></p>
+                <p class="text-left"></p>
+            </div>
+            <ul class="list-group">
+                <a th:href="@{/singleConfigIndex}"><li class="list-group-item">单条设置</li></a>
+                <a th:href="@{/batchConfigIndex}"><li class="list-group-item">批量设置</li></a>
+                <a th:href="@{/showDetailIndex}"><li class="list-group-item">查看详情</li></a>
+            </ul>
+        </div>
+    </body>
+</html>

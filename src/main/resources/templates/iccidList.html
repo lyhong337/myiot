@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>详情列表</title>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div>
+                <p class="text-left"></p>
+                <p class="text-left"><h3>详情列表</h3></p>
+                <p class="text-left"></p>
+            </div>
+            <br/>
+            <a th:href="@{/downloadResultFile}"><li>下载列表</li></a>
+            <br/>
+            <table class="table table-striped">
+                <caption>设备列表</caption>
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>ICCID</th>
+                        <th>自定义字段</th>
+                        <th>启用时间</th>
+                        <th>停用时间</th>
+                        <th>当前状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="sim, userStat: ${simList}">
+                        <td th:text="${userStat.count}"></td>
+                        <td th:text="${sim.iccid}"></td>
+                        <td th:text="${sim.customerfield}"></td>
+                        <td th:text="${sim.starttime}"></td>
+                        <td th:text="${sim.endtime}"></td>
+                        <td th:text="${sim.state}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
